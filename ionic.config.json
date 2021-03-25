@@ -1,0 +1,8 @@
+{
+  "name": "WishList",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "72598130"
+}
