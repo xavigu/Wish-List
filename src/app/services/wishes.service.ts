@@ -8,7 +8,12 @@ export class WishesService {
 
   lists: List[] = [];
 
-  constructor() { }
+  constructor() { 
+    const list1 = new List('Recolect stones');
+    const list2 = new List('Disappear heros');
 
-  
+    this.lists.push(list1, list2);
+  }
+
+
 }
