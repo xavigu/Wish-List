@@ -40,7 +40,9 @@ export class Tab1Page {
             if (data.title.length === 0) {
               return;
             } 
-            this.wishesService.createList(data.title);
+            const listId = this.wishesService.createList(data.title);
+
+            this.router.navigateByUrl(`/tabs/tab1/add/${listId}`);
           }
         }
       ]
