@@ -34,4 +34,19 @@ export class AddPage implements OnInit {
     this.wishesService.saveStorage();
   }
 
+  changeCheck(item: ListItem){
+
+    const pendings = this.list.items.filter(itemData => !itemData.completed).length;
+
+    if (pendings === 0) {
+      this.list.finishedIn = new Date();
+      this.list.finished = true;
+    } else {
+      this.list.finishedIn = null;
+      this.list.finished = false;
+    }
+
+    this.wishesService.saveStorage();
+  }
+
 }
