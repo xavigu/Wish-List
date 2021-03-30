@@ -9,15 +9,25 @@ export class WishesService {
   lists: List[] = [];
 
   constructor() { 
-    const list1 = new List('Recolect stones');
-    const list2 = new List('Disappear heros');
-
-    this.lists.push(list1, list2);
+    this.loadStorage();
   }
 
   createList(title: string) {
     const newList = new List(title);
     this.lists.push(newList);
+    this.saveStorage();
+  }
+
+  saveStorage(){
+    localStorage.setItem('lists', JSON.stringify(this.lists));
+  }
+
+  loadStorage(){
+    if (localStorage.getItem('lists')) {
+      this.lists = JSON.parse(localStorage.getItem('lists'))
+    } else {
+      this.lists = [];
+    }
   }
 
 
