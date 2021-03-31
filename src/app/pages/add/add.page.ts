@@ -49,4 +49,8 @@ export class AddPage implements OnInit {
     this.wishesService.saveStorage();
   }
 
+  deleteItem(index: number){
+    this.list.items.splice(index, 1);
+    this.wishesService.saveStorage();
+  }
 }
