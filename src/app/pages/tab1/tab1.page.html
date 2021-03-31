@@ -14,10 +14,11 @@
   </ion-header>
 
   <ion-list color="dark">
-    <ion-item *ngFor="let list of wishesService.lists" detail color="dark">
+    <ion-item *ngFor="let list of wishesService.lists" detail color="dark" (click)="selectList(list)">
       <ion-label>
         {{list.title}}
       </ion-label>
+      <ion-note color="tertiary" style="padding-right: 12px;" slot="end">{{list.items.length}} items</ion-note>
     </ion-item>
   </ion-list>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
