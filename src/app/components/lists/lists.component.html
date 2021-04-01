@@ -1,5 +1,5 @@
 <ion-list color="dark">
-  <ion-item-sliding *ngFor="let list of wishesService.lists" class="animated fadeInDown">
+  <ion-item-sliding *ngFor="let list of wishesService.lists | finishedFilter:finished" class="animated fadeInDown">
     <ion-item detail color="dark" (click)="selectList(list)">
       <ion-label>
         {{list.title}}
