@@ -20,6 +20,11 @@ export class WishesService {
     return newList.id;
   }
 
+  deleteList(list: List){
+    this.lists = this.lists.filter(l => l.id !== list.id);
+    this.saveStorage();
+  }
+
   getList(id: string | number): List{
     const idList = +id;
 

@@ -6,15 +6,15 @@ import { IonicModule } from '@ionic/angular';
 
 
 @NgModule({
+  imports: [
+    CommonModule,
+    IonicModule
+  ],
   declarations: [
     ListsComponent
   ],
   exports: [
     ListsComponent
-  ],
-  imports: [
-    CommonModule,
-    IonicModule
   ]
 })
 export class ComponentsModule { }
